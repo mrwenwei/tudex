@@ -7,9 +7,10 @@ In this project, I created TWD token and USD token and a dex contract on `ERC20`
 Then deployed them on the local Ethereum simulator by `ganache`.
 
 ### INSTALLATION
+(using node v20.14.0)
 ```
-npm install -g ganache
-npm install -g truffle
+cd dex
+npm i
 ```
 
 #### Step 1
@@ -33,16 +34,53 @@ run the command and the contracts would be deployed to the blockchain:
 truffle migrate
 ```
 
-here 
+Here we need to record the contract address that displayed on terminal and copy it to `./dex-ui/.env`:
+<img width="693" alt="截圖 2024-06-01 凌晨12 36 17" src="https://github.com/mrwenwei/tudex/assets/11289450/f3de543f-f2d5-4e79-9541-d789d259c523">
+
+<img width="832" alt="截圖 2024-06-01 凌晨12 59 04" src="https://github.com/mrwenwei/tudex/assets/11289450/0281ac4e-fb37-4030-9c1c-4e275e46c031">
 
 #### Step 3
 
 In `dex_test.js` define the unit test of all the functioins.
-and run the command to test the functions.
+* check if the dex has been deployed successfully.
+* check if trade 6000 TWD would get 375 USD
+* Then, check if trade 375 USD would get 6000 TWD
+
+run the command to test the functions.
 ```
 truffle test
 ```
 
+<img width="401" alt="截圖 2024-06-01 凌晨12 40 25" src="https://github.com/mrwenwei/tudex/assets/11289450/d6f5a1a1-47c3-47d6-b870-ca13a655b23a">
+
+
 ## dex-ui (react)
+
+Let's trade with UI!
+
+### INSTALLATION
+
+```
+cd dex-ui
+npm i
+```
+
+Here we need put the ABI that we just generated to the working folder:
+```
+cp ../dex/build/contracts/DEX.json src/abi/DEX.json
+cp ../dex/build/contracts/TWDToken.json src/abi/TWDToken.json
+cp ../dex/build/contracts/USDToken.json src/abi/USDToken.json
+```
+
+Then start the react UI:
+```
+npm start
+```
+
+Then You can use the account to trade with TUDEX!
+
+<img width="763" alt="截圖 2024-05-31 晚上11 02 41" src="https://github.com/mrwenwei/tudex/assets/11289450/71fd7500-2a41-45e8-9a1d-1fadd156ace4">
+
+<img width="780" alt="截圖 2024-05-31 晚上11 02 55" src="https://github.com/mrwenwei/tudex/assets/11289450/e0c3102c-e3d8-4891-bf03-84199dd3c686">
 
 
