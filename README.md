@@ -1,9 +1,13 @@
 # TUDEX
-You can trade TWD to USD or USD to TWD on TUDEX.
+In this project I created a solidy smart contract of DEX and deploy locally. Also created a simple UI to interact with the DEX.
+You can follow the steps below to trade locally.
+
+You can trade TWD to USD or USD to TWD on TUDEX!
+
 
 ## dex (solidity)
 
-In this project, I created TWD token and USD token and a dex contract on `ERC20`.
+I created TWD token contract and USD token contract and a dex contract on `ERC20`.
 Then deployed them on the local Ethereum simulator by `ganache`.
 
 ### INSTALLATION
@@ -13,6 +17,7 @@ cd dex
 npm i
 ```
 
+### Run locally
 #### Step 1
 After the installation, we can start the local Ethereum simulator just type:
 ```
@@ -65,12 +70,16 @@ cd dex-ui
 npm i
 ```
 
+#### Step 1
+
 Here we need put the ABI that we just generated to the working folder:
 ```
 cp ../dex/build/contracts/DEX.json src/abi/DEX.json
 cp ../dex/build/contracts/TWDToken.json src/abi/TWDToken.json
 cp ../dex/build/contracts/USDToken.json src/abi/USDToken.json
 ```
+
+#### Step 2
 
 Then start the react UI:
 ```
